@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MessageCircle, Share2, Globe, Check } from "lucide-react";
+import { Mail, MessageCircle, Share2, Globe, CheckCircle2 } from "lucide-react";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sent">("idle");
@@ -75,11 +75,26 @@ export default function Contact() {
           <button 
             type="submit"
             className="interactive"
-            style={{ padding: "1rem", background: "linear-gradient(45deg, var(--accent-1), var(--accent-2))", border: "none", borderRadius: "8px", color: "white", fontWeight: "bold", fontSize: "1.1rem", marginTop: "1rem", cursor: "pointer", display: "flex", justifyContent: "center", alignItems: "center", minHeight: "56px" }}
+            style={{ 
+              padding: "1rem", 
+              background: status === "sent" ? "linear-gradient(45deg, #10b981, #059669)" : "linear-gradient(45deg, var(--accent-1), var(--accent-2))", 
+              border: "none", 
+              borderRadius: "8px", 
+              color: "white", 
+              fontWeight: "bold", 
+              fontSize: "1.1rem", 
+              marginTop: "1rem", 
+              cursor: "pointer", 
+              display: "flex", 
+              justifyContent: "center", 
+              alignItems: "center", 
+              minHeight: "56px",
+              transition: "background 0.5s ease"
+            }}
           >
             {status === "sent" ? (
               <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
-                <Check size={20} /> Sent!
+                <CheckCircle2 size={24} /> Sent!
               </motion.div>
             ) : "Send Message"}
           </button>
