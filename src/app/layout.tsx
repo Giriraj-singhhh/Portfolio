@@ -14,6 +14,13 @@ export const metadata: Metadata = {
   description: "Futuristic personal portfolio of Giriraj Singh Rathore, showcasing high-end projects and creative development.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

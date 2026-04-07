@@ -80,8 +80,14 @@ a {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.2rem;
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
 }
 
 .section {
@@ -104,8 +110,10 @@ a {
   justify-content: center;
   color: var(--text-primary);
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 2rem;
+  font-size: clamp(1.2rem, 4vw, 2rem);
   font-weight: 700;
+  text-align: center;
+  padding: 0 1rem;
 }
 
 /* Responsive Layout Classes */
