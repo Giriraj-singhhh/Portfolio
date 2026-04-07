@@ -21,9 +21,26 @@ export default function Contact() {
           Ready to build something extraordinary? Drop me a message and let&apos;s create the future together.
         </p>
 
-        <form style={{ display: "flex", flexDirection: "column", gap: "1.5rem", marginBottom: "3rem" }}>
+        <form 
+          onSubmit={(e) => {
+            e.preventDefault();
+            const formData = new FormData(e.currentTarget);
+            const name = formData.get("name");
+            const email = formData.get("email");
+            const message = formData.get("message");
+            
+            const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+            const body = encodeURIComponent(`Message: ${message}\n\nSender Email: ${email}`);
+            
+            // Replace with your actual email address here before deployment
+            window.location.href = `mailto:hello@example.com?subject=${subject}&body=${body}`;
+          }}
+          style={{ display: "flex", flexDirection: "column", gap: "1.5rem", marginBottom: "3rem" }}
+        >
           <input 
             type="text" 
+            name="name"
+            required
             placeholder="Your Name" 
             className="interactive"
             style={{ padding: "1rem", background: "rgba(0,0,0,0.2)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", color: "white", outline: "none", transition: "border-color 0.3s", width: "100%" }}
@@ -32,6 +49,8 @@ export default function Contact() {
           />
           <input 
             type="email" 
+            name="email"
+            required
             placeholder="Your Email" 
             className="interactive"
             style={{ padding: "1rem", background: "rgba(0,0,0,0.2)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", color: "white", outline: "none", transition: "border-color 0.3s", width: "100%" }}
@@ -39,6 +58,8 @@ export default function Contact() {
             onBlur={(e) => e.target.style.borderColor = "rgba(255,255,255,0.1)"}
           />
           <textarea 
+            name="message"
+            required
             placeholder="Your Message" 
             rows={4}
             className="interactive"
@@ -47,9 +68,9 @@ export default function Contact() {
             onBlur={(e) => e.target.style.borderColor = "rgba(255,255,255,0.1)"}
           />
           <button 
-            type="button"
+            type="submit"
             className="interactive"
-            style={{ padding: "1rem", background: "linear-gradient(45deg, var(--accent-1), var(--accent-2))", border: "none", borderRadius: "8px", color: "white", fontWeight: "bold", fontSize: "1.1rem", marginTop: "1rem" }}
+            style={{ padding: "1rem", background: "linear-gradient(45deg, var(--accent-1), var(--accent-2))", border: "none", borderRadius: "8px", color: "white", fontWeight: "bold", fontSize: "1.1rem", marginTop: "1rem", cursor: "pointer" }}
           >
             Send Message
           </button>
