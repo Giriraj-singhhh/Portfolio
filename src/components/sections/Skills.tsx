@@ -2,13 +2,35 @@
 
 import { motion } from "framer-motion";
 
-const skills = [
-  { name: "React / Next.js", level: 90 },
-  { name: "TypeScript", level: 85 },
-  { name: "Three.js / WebGL", level: 70 },
-  { name: "Framer Motion", level: 95 },
-  { name: "UI/UX Design", level: 80 },
-  { name: "Node.js", level: 75 },
+const skillCategories = [
+  {
+    category: "Programming Languages",
+    skills: ["Java", "C++", "C", "Python"]
+  },
+  {
+    category: "Web Development",
+    skills: ["HTML", "CSS", "JavaScript (Basic)", "Responsive Design"]
+  },
+  {
+    category: "Frameworks & Libraries",
+    skills: ["Bootstrap (Basic)"]
+  },
+  {
+    category: "Databases",
+    skills: ["SQLplus", "DBMS"]
+  },
+  {
+    category: "Tools & Technologies",
+    skills: ["Git", "GitHub", "VS Code"]
+  },
+  {
+    category: "Core Concepts",
+    skills: ["Data Structures & Algorithms (DSA)", "Object-Oriented Programming (OOP)", "Operating Systems"]
+  },
+  {
+    category: "Other Skills",
+    skills: ["API Integration", "Debugging", "Problem Solving"]
+  }
 ];
 
 export default function Skills() {
@@ -22,23 +44,43 @@ export default function Skills() {
       >
         <h2 className="text-glow responsive-title" style={{ marginBottom: "4rem", textAlign: "center" }}>Core Competencies</h2>
         
-        <div style={{ maxWidth: "800px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "2rem" }}>
-          {skills.map((skill, index) => (
-            <div key={skill.name}>
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.5rem" }}>
-                <span style={{ fontWeight: 500, letterSpacing: "1px" }}>{skill.name}</span>
-                <span style={{ color: "var(--accent-1)" }}>{skill.level}%</span>
+        <div style={{ 
+          display: "grid", 
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", 
+          gap: "2rem" 
+        }}>
+          {skillCategories.map((group, index) => (
+            <motion.div
+              key={group.category}
+              className="glass"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              whileHover={{ y: -5 }}
+              style={{ padding: "2rem", display: "flex", flexDirection: "column", height: "100%" }}
+            >
+              <h3 style={{ fontSize: "1.2rem", marginBottom: "1.5rem", color: "var(--accent-2)" }}>
+                {group.category}
+              </h3>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem" }}>
+                {group.skills.map(skill => (
+                  <span 
+                    key={skill} 
+                    style={{ 
+                      fontSize: "0.9rem", 
+                      padding: "0.5rem 1rem", 
+                      borderRadius: "20px", 
+                      background: "rgba(139, 92, 246, 0.1)", 
+                      border: "1px solid rgba(139, 92, 246, 0.3)",
+                      color: "var(--text-primary)"
+                    }}
+                  >
+                    {skill}
+                  </span>
+                ))}
               </div>
-              <div style={{ width: "100%", height: "8px", background: "rgba(255,255,255,0.1)", borderRadius: "4px", overflow: "hidden" }}>
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.level}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.5, delay: index * 0.1, ease: "easeOut" }}
-                  style={{ height: "100%", background: "linear-gradient(90deg, var(--accent-1), var(--accent-2))", boxShadow: "0 0 10px var(--accent-glow)" }}
-                />
-              </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </motion.div>
