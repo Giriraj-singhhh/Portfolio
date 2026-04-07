@@ -5,24 +5,29 @@ import { ExternalLink, Code } from "lucide-react";
 
 const projects = [
   {
-    title: "Cyberpunk E-Commerce",
-    description: "A fully 3D interactive shopping experience with real-time product rendering.",
-    tags: ["Next.js", "Three.js", "Framer Motion"],
+    title: "OCR (Optical Character Recognition System)",
+    description: "Developed a system to extract text from images using image processing and Python (OpenCV, Tesseract). Implemented preprocessing techniques to improve accuracy.",
+    tags: ["Python", "OpenCV", "Tesseract"],
   },
   {
-    title: "AI Dashboard UI",
-    description: "Futuristic analytics platform with glassmorphic elements and data visualizations.",
-    tags: ["React", "D3.js", "Tailwind"],
+    title: "Agency Website",
+    description: "Designed and developed a responsive website for a digital agency using HTML, CSS, and JavaScript with modern UI/UX principles.",
+    tags: ["HTML", "CSS", "JavaScript", "UI/UX"],
   },
   {
-    title: "Nebula Protocol",
-    description: "Web3 DeFi landing page with scrolling animations and dynamic gradients.",
-    tags: ["Vue", "GSAP", "WebGL"],
+    title: "Student Management System",
+    description: "Built a full-featured system using Java with CRUD operations, file handling/database integration, and user-friendly interface.",
+    tags: ["Java", "CRUD", "Database"],
   },
   {
-    title: "Project Alpha",
-    description: "Conceptual social media app focusing on minimal, fluid interactions.",
-    tags: ["React Native", "Reanimated"],
+    title: "Weather App (API-Based)",
+    description: "Created a weather forecasting application using REST APIs to fetch real-time weather data and display dynamic results.",
+    tags: ["REST API", "JavaScript", "Frontend"],
+  },
+  {
+    title: "E-Commerce Backend System",
+    description: "Designed backend functionalities such as user authentication, product management, and order handling using basic database concepts.",
+    tags: ["Backend", "Auth", "Database"],
   }
 ];
 
