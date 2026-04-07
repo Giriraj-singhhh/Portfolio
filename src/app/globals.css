@@ -97,6 +97,13 @@ a {
   justify-content: center;
   position: relative;
   z-index: 10;
+  padding: 6rem 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0; /* Add smaller padding boundary on mobile so sections don't squish */
+  }
 }
 
 /* Preloader */
