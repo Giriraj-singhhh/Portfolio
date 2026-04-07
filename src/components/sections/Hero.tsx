@@ -47,11 +47,11 @@ export default function Hero() {
           className="text-gradient responsive-text"
           style={{ fontWeight: 700, marginTop: "1rem", fontSize: "clamp(1.5rem, 4vw, 3rem)" }}
         >
-          Creative Developer / Designer
+          Computer Science Student / Software Engineer
         </motion.h2>
         <motion.div variants={itemVariants} style={{ marginTop: "3rem" }}>
           <p style={{ maxWidth: "500px", color: "var(--text-secondary)", fontSize: "1.1rem", lineHeight: 1.6 }}>
-            I build interactive, immersive, and high-performance digital experiences that bridge the gap between design and engineering.
+            I build efficient, scalable, and high-performance software solutions, bridging the gap between algorithms and real-world applications.
           </p>
         </motion.div>
 

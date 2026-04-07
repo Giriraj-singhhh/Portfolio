@@ -43,8 +43,8 @@ export default function About() {
         <div>
           <h2 className="text-glow" style={{ fontSize: "2.5rem", marginBottom: "2rem" }}>About Me</h2>
           <p style={{ color: "var(--text-secondary)", fontSize: "1.2rem", lineHeight: 1.8, marginBottom: "2rem" }}>
-            I am a passionate creative developer specializing in building rich, interactive web experiences. 
-            I blend design with cutting-edge engineering to create user-centric digital products.
+            I am a passionate Computer Science B.Tech student specializing in software engineering and data structures. 
+            I blend strong analytical problem-solving with modern frameworks to build robust applications.
           </p>
           
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
@@ -55,8 +55,8 @@ export default function About() {
             </div>
             <div>
               <Zap className="text-gradient" size={32} style={{ marginBottom: "1rem" }} />
-              <h3 style={{ fontSize: "1.2rem", marginBottom: "0.5rem" }}>Animation</h3>
-              <p style={{ color: "var(--text-secondary)" }}>Crafting fluid, cinematic motion and 3D experiences.</p>
+              <h3 style={{ fontSize: "1.2rem", marginBottom: "0.5rem" }}>Problem Solving</h3>
+              <p style={{ color: "var(--text-secondary)" }}>Applying DSA and logical thinking to optimize system architectures.</p>
             </div>
           </div>
         </div>
